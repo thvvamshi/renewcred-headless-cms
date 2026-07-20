@@ -7,7 +7,7 @@ A production-ready Headless Content Management System (CMS) built with the MERN 
 - public : https://renewcred-public.onrender.com
 - Admin : https://renewcred-admin.onrender.com
 - Backend api : https://renewcred-headless-cms.onrender.com
-# health :  https://renewcred-headless-cms.onrender.com/health
+- health :  https://renewcred-headless-cms.onrender.com/health
 ## ✨ Features
 
 ### Authentication
