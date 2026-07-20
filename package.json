@@ -15,7 +15,7 @@
     "build": "npm --workspaces run build"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": "20.x"
   },
   "dependencies": {
     "react-icons": "^5.7.0"
