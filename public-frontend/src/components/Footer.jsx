@@ -1,72 +1,135 @@
 import Image from "next/image";
 import { Clock3, Lock, Mail, MapPin } from "lucide-react";
 
-const links = ["Buyer", "Supplier", "Climate & Us", "Science", "Standards", "Contact Us"];
+const links = [
+  "Buyer",
+  "Supplier",
+  "Climate & Us",
+  "Science",
+  "Standards",
+  "Contact Us",
+];
+
 const legal = ["Privacy Policy", "Terms & Conditions", "Support"];
 
 export default function Footer() {
   return (
-    <footer className="mt-[104px] rounded-t-[54px] bg-footer px-5 py-[76px] text-white sm:rounded-t-[66px] lg:px-[78px]">
-      <div className="mx-auto max-w-[1324px]">
-        <div className="grid gap-12 border-b border-white/55 pb-[48px] lg:grid-cols-[1.1fr_0.75fr_1fr] lg:gap-16">
+    <footer className="mt-[104px] overflow-hidden rounded-t-[80px] bg-[#2B2C2C] text-white">
+      <div className="mx-auto max-w-[1920px] px-[104px] pt-[80px] pb-[40px]">
+        <div className="grid gap-[40px] border-b border-white/40 pb-[48px] lg:grid-cols-[430px_220px_520px] lg:justify-between">
+          {/* Left */}
+
           <div>
-            <a href="/standards/ev" className="relative mb-8 block h-10 w-[178px]">
-              <Image src="/assets/renewcred-logo-light.svg" alt="RenewCred" fill className="object-contain object-left" />
+            <a
+              href="/standards"
+              className="relative mb-3 block h-[46px] w-[220px]"
+            >
+              <Image
+                src="/assets/renewcred-logo-light.svg"
+                alt="RenewCred"
+                fill
+                className="object-contain object-left"
+              />
             </a>
-            <ul className="space-y-1.5 text-[13px] leading-5 text-white/82">
-              <li className="flex items-start gap-2">
-                <MapPin size={17} className="mt-1 shrink-0" />
-                Indiranagar, Bengaluru, Karnataka, INDIA
+
+            <ul className="space-y-[6px] text-[16px] leading-[30px] text-white/85">
+              <li className="flex items-start gap-3">
+                <MapPin size={18} className="mt-1 shrink-0" />
+                <span>Indiranagar, Bengaluru, Karnataka, INDIA</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail size={17} />
+
+              <li className="flex items-center gap-3">
+                <Mail size={18} />
                 yp@renewcred.com
               </li>
-              <li className="flex items-center gap-2">
-                <Clock3 size={17} />
+
+              <li className="flex items-center gap-3">
+                <Clock3 size={18} />
                 There is no time to save the planet
               </li>
+
               <li>CIN No.: XXXXXXXXX</li>
             </ul>
-            <div className="mt-7 flex gap-6 text-[14px] font-bold text-white">
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="X">X</a>
-              <a href="#" aria-label="LinkedIn">in</a>
-              <a href="#" aria-label="Instagram">ig</a>
+
+            <div className="mt-2 flex gap-5 text-[18px] font-semibold text-white">
+              <a href="#">f</a>
+
+              <a href="#">X</a>
+
+              <a href="#">in</a>
+
+              <a href="#">ig</a>
             </div>
           </div>
 
-          <nav className="space-y-3 text-[14px] text-white/88">
+          {/* Center */}
+
+          <nav className="space-y-[15px] pt-1 text-[15px] font-medium text-white/90">
             {links.map((link) => (
-              <a key={link} href={link === "Standards" ? "/standards/ev" : "#"} className="block transition hover:text-white">
+              <a
+                key={link}
+                href={link === "Standards" ? "/standards" : "#"}
+                className="block transition hover:text-white"
+              >
                 {link}
               </a>
             ))}
           </nav>
 
-          <form className="max-w-[520px]">
-            <p className="mb-4 flex items-center gap-3 text-[18px] italic leading-7 text-white/88">
+          {/* Right */}
+
+          <form className="w-full max-w-[506px]">
+            <p className="mb-5 flex items-center gap-3 text-[18px] italic leading-[32px] text-white/90">
               <Lock size={18} />
               No spam. Just pure climate intelligence.
             </p>
-            <label className="sr-only" htmlFor="subscribe-email">Email address</label>
+
+            <label htmlFor="subscribe-email" className="sr-only">
+              Email Address
+            </label>
+
             <input
               id="subscribe-email"
               type="email"
               placeholder="Your Email Address Please!"
-              className="h-[52px] w-full rounded-full border border-white/50 bg-white px-6 text-[16px] text-ink outline-none placeholder:text-[#b8b8b8]"
+              className="h-[50px] w-full rounded-full border border-[#D9D9D9] bg-white px-8 text-[18px] text-[#2B2C2C] outline-none placeholder:text-[#BDBDBD]"
             />
-            <button type="button" className="mt-6 rounded-full bg-renew px-7 py-3.5 text-[15px] font-bold text-white transition hover:bg-red-700">
+
+            <button
+              type="button"
+              className="mt-3 h-[42px] w-[136px] rounded-full bg-[#C3202F] text-[15px] font-semibold transition hover:bg-[#A91B28]"
+            >
               Subscribe
             </button>
           </form>
         </div>
+        {/* Bottom */}
 
-        <div className="flex flex-col gap-6 pt-8 text-[11px] italic text-white/78 md:flex-row md:items-center md:justify-between">
-          <p>Copyright (c) 2025 Renewred. All rights reserved.</p>
-          <nav className="flex flex-wrap gap-9">
+        <div
+          className="
+            flex
+            flex-col
+            gap-2
+            pt-[10px]
+
+            text-[12px]
+            italic
+            text-white/75
+
+            md:flex-row
+            md:items-center
+            md:justify-between
+          "
+        >
+          <p>Copyright © 2025 RenewCred. All rights reserved.</p>
+
+          <nav className="flex flex-wrap gap-[10px]">
             {legal.map((item) => (
-              <a key={item} href="#" className="transition hover:text-white">
+              <a
+                key={item}
+                href="#"
+                className="transition duration-200 hover:text-white"
+              >
                 {item}
               </a>
             ))}
