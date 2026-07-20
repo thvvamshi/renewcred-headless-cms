@@ -1,0 +1,20 @@
+{
+  "name": "renewcred-headless-cms",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "admin-frontend",
+    "public-frontend"
+  ],
+  "scripts": {
+    "dev:backend": "npm --workspace backend run dev",
+    "dev:admin": "npm --workspace admin-frontend run dev",
+    "dev:public": "npm --workspace public-frontend run dev",
+    "seed": "npm --workspace backend run seed",
+    "build": "npm --workspaces run build"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
