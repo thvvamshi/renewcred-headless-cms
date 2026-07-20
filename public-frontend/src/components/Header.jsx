@@ -12,7 +12,7 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="px-4 pt-[18px] sm:px-8 lg:px-[58px]">
+    <header className="px-4 pt-[15px] sm:px-8 lg:px-[58px]">
       <nav className="mx-auto flex h-[66px] max-w-[1324px] items-center justify-between rounded-[13px] border border-line bg-white/90 px-5 shadow-nav backdrop-blur md:px-6">
         <a href="/standards/ev" aria-label="RenewCred home" className="relative h-8 w-[122px] shrink-0">
           <Image src="/assets/renewcred-logo-dark.svg" alt="RenewCred" fill priority className="object-contain object-left" />

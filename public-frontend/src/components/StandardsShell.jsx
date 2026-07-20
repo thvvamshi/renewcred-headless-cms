@@ -23,7 +23,7 @@ export default function StandardsShell({ page }) {
   }, [page.blocks, page.toc, query]);
 
   return (
-    <main className="px-4 pt-14 sm:px-8 lg:px-[78px] lg:pt-16">
+    <main className="px-2 pt-7 sm:px-8 lg:px-[78px] lg:pt-16">
       <section className="mx-auto max-w-[1284px]">
         <div className="grid gap-y-7 lg:grid-cols-[230px_minmax(0,1fr)] lg:gap-x-16">
           <div className="lg:col-span-2">

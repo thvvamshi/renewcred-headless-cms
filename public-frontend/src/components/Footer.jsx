@@ -1,5 +1,15 @@
 import Image from "next/image";
-import { Clock3, Lock, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import {
+  Clock3,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Lock,
+  Mail,
+  MapPin,
+  Twitter,
+} from "lucide-react";
 
 const links = [
   "Buyer",
@@ -14,15 +24,17 @@ const legal = ["Privacy Policy", "Terms & Conditions", "Support"];
 
 export default function Footer() {
   return (
-    <footer className="mt-[10px] overflow-hidden rounded-t-[80px] bg-[#2B2C2C] text-white">
-      <div className="mx-auto max-w-[1920px] px-[104px] pt-[80px] pb-[40px]">
-        <div className="grid gap-[40px] border-b border-white/40 pb-[48px] lg:grid-cols-[430px_220px_520px] lg:justify-between">
+    <footer className="mt-8 overflow-hidden rounded-t-[56px] bg-[#2F2F2F] text-white">
+      <div className="mx-auto max-w-[1180px] px-5 pt-10 pb-5 lg:px-8">
+        {/* Top */}
+
+        <div className="grid grid-cols-1 gap-8 border-b border-white/20 pb-6 md:grid-cols-12">
           {/* Left */}
 
-          <div>
-            <a
-              href="/standards"
-              className="relative mb-3 block h-[46px] w-[220px]"
+          <div className="md:col-span-5">
+            <Link
+              href="/"
+              className="relative mb-5 block h-7 w-[130px]"
             >
               <Image
                 src="/assets/renewcred-logo-light.svg"
@@ -30,108 +42,125 @@ export default function Footer() {
                 fill
                 className="object-contain object-left"
               />
-            </a>
+            </Link>
 
-            <ul className="space-y-[6px] text-[16px] leading-[30px] text-white/85">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="mt-1 shrink-0" />
+            <ul className="space-y-1 text-[12px] leading-[18px] text-white/75">
+              <li className="flex items-start gap-2">
+                <MapPin size={12} className="mt-[2px] shrink-0" />
                 <span>Indiranagar, Bengaluru, Karnataka, INDIA</span>
               </li>
 
-              <li className="flex items-center gap-3">
-                <Mail size={18} />
+              <li className="flex items-center gap-2">
+                <Mail size={12} />
                 yp@renewcred.com
               </li>
 
-              <li className="flex items-center gap-3">
-                <Clock3 size={18} />
+              <li className="flex items-center gap-2">
+                <Clock3 size={12} />
                 There is no time to save the planet
               </li>
 
-              <li>CIN No.: XXXXXXXXX</li>
+              <li>CIN No.: XXXXXXXX</li>
             </ul>
 
-            <div className="mt-2 flex gap-5 text-[18px] font-semibold text-white">
-              <a href="#">f</a>
+            <div className="mt-4 flex items-center gap-2.5">
+              <a href="#" className="text-white/70 hover:text-white transition">
+                <Facebook size={13} />
+              </a>
 
-              <a href="#">X</a>
+              <a href="#" className="text-white/70 hover:text-white transition">
+                <Twitter size={13} />
+              </a>
 
-              <a href="#">in</a>
+              <a href="#" className="text-white/70 hover:text-white transition">
+                <Linkedin size={13} />
+              </a>
 
-              <a href="#">ig</a>
+              <a href="#" className="text-white/70 hover:text-white transition">
+                <Instagram size={13} />
+              </a>
             </div>
           </div>
 
           {/* Center */}
 
-          <nav className="space-y-[15px] pt-1 text-[15px] font-medium text-white/90">
-            {links.map((link) => (
-              <a
-                key={link}
-                href={link === "Standards" ? "/standards" : "#"}
-                className="block transition hover:text-white"
-              >
-                {link}
-              </a>
-            ))}
-          </nav>
+          <div className="md:col-span-2 md:pl-4">
+            <nav>
+              <ul className="space-y-2 text-[12px] text-white/75">
+                {links.map((link) => (
+                  <li key={link}>
+                    <Link
+                      href={link === "Standards" ? "/standards" : "#"}
+                      className="transition hover:text-white"
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
 
           {/* Right */}
 
-          <form className="w-full max-w-[506px]">
-            <p className="mb-5 flex items-center gap-3 text-[18px] italic leading-[32px] text-white/90">
-              <Lock size={18} />
+          <div className="md:col-span-5 md:justify-self-end w-full max-w-[360px]">
+            <p className="mb-3 flex items-center gap-2 text-[13px] italic text-white/90">
+              <Lock size={13} />
               No spam. Just pure climate intelligence.
             </p>
 
-            <label htmlFor="subscribe-email" className="sr-only">
-              Email Address
-            </label>
-
             <input
-              id="subscribe-email"
               type="email"
               placeholder="Your Email Address Please!"
-              className="h-[50px] w-full rounded-full border border-[#D9D9D9] bg-white px-8 text-[18px] text-[#2B2C2C] outline-none placeholder:text-[#BDBDBD]"
+              className="
+                h-9
+                w-full
+                rounded-full
+                border
+                border-white/15
+                bg-white
+                px-4
+                text-[12px]
+                text-[#2F2F2F]
+                placeholder:text-[#B9B9B9]
+                outline-none
+                transition
+                focus:border-[#C3202F]
+              "
             />
 
             <button
-              type="button"
-              className="mt-3 h-[42px] w-[136px] rounded-full bg-[#C3202F] text-[15px] font-semibold transition hover:bg-[#A91B28]"
+              className="
+                mt-3
+                h-8
+                rounded-full
+                bg-[#C3202F]
+                px-5
+                text-[12px]
+                font-medium
+                transition
+                hover:bg-[#AA1C29]
+              "
             >
               Subscribe
             </button>
-          </form>
+          </div>
         </div>
+
         {/* Bottom */}
 
-        <div
-          className="
-            flex
-            flex-col
-            gap-2
-            pt-[10px]
-
-            text-[12px]
-            italic
-            text-white/75
-
-            md:flex-row
-            md:items-center
-            md:justify-between
-          "
-        >
+        <div className="mt-4 flex flex-col gap-2 text-[9px] text-white/55 md:flex-row md:items-center md:justify-between">
           <p>Copyright © 2025 RenewCred. All rights reserved.</p>
 
-          <nav className="flex flex-wrap gap-[10px]">
+          <nav className="flex flex-wrap gap-4">
             {legal.map((item) => (
-              <a
+              <Link
                 key={item}
                 href="#"
-                className="transition duration-200 hover:text-white"
+                className="transition hover:text-white"
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

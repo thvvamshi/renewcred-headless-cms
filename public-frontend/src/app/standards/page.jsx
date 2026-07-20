@@ -13,23 +13,23 @@ export default async function StandardsPage() {
     <>
       <Header />
 
-      <main className="min-h-screen">
-        <section className="mx-auto max-w-7xl px-6 py-10">
+      <main>
+        <section className="mx-auto w-full max-w-[1440px] px-6 py-8 md:px-10 lg:px-16 lg:py-12">
           <StandardBadge />
 
-          <h4 className="mt-3 text-2xl font-semibold lg:text-3xl">
+          <h1 className="mt-2 text-[20px] font-semibold leading-[1.1] tracking-[-0.03em] text-zinc-900 md:text-[20px] lg:text-[28px]">
             RenewCred Standards
-          </h4>
+          </h1>
 
-          <p className="mt-2 max-w-3xl text-lg leading-1 text-zinc-400 text-[15px]">
+          <p className="mt-2 max-w-[560px] text-[14px] leading-[22px] text-zinc-500">
             Lorem ipsum dolor sit amet consectetur. Gravida faucibus commodo leo
             eget commodo. Sit quis dolor non sed enim scelerisque.
           </p>
 
-          <div className="mt-3 border-t border-zinc-800" />
+          <div className="mt-6 border-t border-zinc-200" />
 
           {standards.length === 0 ? (
-            <div className="py-24 text-center text-zinc-500">
+            <div className="py-20 text-center text-zinc-500">
               No standards found.
             </div>
           ) : (
@@ -38,20 +38,26 @@ export default async function StandardsPage() {
                 <Link
                   key={page._id}
                   href={`/standards/${page.slug}`}
-                  className="block border-b border-zinc-800 py-12 transition-colors hover:bg-zinc-50"
+                  className="group block border-b border-zinc-200 py-6 transition-colors duration-200 hover:bg-zinc-50"
                 >
-                  <div className="flex items-start justify-between gap-8">
-                    <div className="flex-1">
-                      <h2 className="text-3xl font-semibold">{page.title}</h2>
+                  <div className="grid grid-cols-12 gap-y-4 gap-x-8">
+                    {/* Left */}
+                    <div className="col-span-12 lg:col-span-9">
+                      <h2 className="text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-zinc-900 transition-colors duration-200 group-hover:text-[#C3202F]">
+                        {page.title}
+                      </h2>
 
-                      <p className="mt-6 max-w-4xl leading-8 text-zinc-400">
+                      <p className="mt-3 max-w-[920px] text-[13px] leading-[24px] text-zinc-500">
                         {page.summary || "No description available."}
                       </p>
                     </div>
 
-                    <span className="whitespace-nowrap hover:text-red-500">
-                      Read More →
-                    </span>
+                    {/* Right */}
+                    <div className="col-span-12 flex items-start lg:col-span-3 lg:justify-end">
+                      <span className="mt-1 whitespace-nowrap text-[14px] font-medium text-zinc-700 transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#C3202F]">
+                        Read more →
+                      </span>
+                    </div>
                   </div>
                 </Link>
               ))}
