@@ -14,7 +14,7 @@ const legal = ["Privacy Policy", "Terms & Conditions", "Support"];
 
 export default function Footer() {
   return (
-    <footer className="mt-[104px] overflow-hidden rounded-t-[80px] bg-[#2B2C2C] text-white">
+    <footer className="mt-[10px] overflow-hidden rounded-t-[80px] bg-[#2B2C2C] text-white">
       <div className="mx-auto max-w-[1920px] px-[104px] pt-[80px] pb-[40px]">
         <div className="grid gap-[40px] border-b border-white/40 pb-[48px] lg:grid-cols-[430px_220px_520px] lg:justify-between">
           {/* Left */}
