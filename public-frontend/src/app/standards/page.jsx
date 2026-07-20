@@ -19,7 +19,7 @@ export default async function StandardsPage() {
 
           <h4 className="mt-3 text-2xl font-semibold lg:text-3xl">
             RenewCred Standards
-          </h4> 
+          </h4>
 
           <p className="mt-2 max-w-3xl text-lg leading-1 text-zinc-400 text-[15px]">
             Lorem ipsum dolor sit amet consectetur. Gravida faucibus commodo leo
@@ -35,9 +35,10 @@ export default async function StandardsPage() {
           ) : (
             <div>
               {standards.map((page) => (
-                <article
+                <Link
                   key={page._id}
-                  className="border-b border-zinc-800 py-12"
+                  href={`/standards/${page.slug}`}
+                  className="block border-b border-zinc-800 py-12 transition-colors hover:bg-zinc-50"
                 >
                   <div className="flex items-start justify-between gap-8">
                     <div className="flex-1">
@@ -48,14 +49,11 @@ export default async function StandardsPage() {
                       </p>
                     </div>
 
-                    <Link
-                      href={`/standards/${page.slug}`}
-                      className="whitespace-nowrap text-white hover:text-red-500"
-                    >
+                    <span className="whitespace-nowrap hover:text-red-500">
                       Read More →
-                    </Link>
+                    </span>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           )}

@@ -22,7 +22,7 @@ export default function Header() {
           {navItems.map((item) => (
             <a
               key={item}
-              href={item === "Standards" ? "/standards/ev" : "#"}
+              href={item === "Standards" ? "/standards/" : "#"}
               className={`inline-flex items-center gap-1 transition hover:text-renew ${item === "Standards" ? "text-renew" : ""}`}
             >
               {item}
